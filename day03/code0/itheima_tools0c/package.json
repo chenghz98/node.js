@@ -1,0 +1,16 @@
+{
+  "name": "itheima_tools0c",
+  "version": "1.0.0",
+  "description": "定义了格式化时间dateFormat,Escape的包",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "itheima",
+    "dateFormat",
+    "Escape"
+  ],
+  "author": "c",
+  "license": "ISC"
+}
