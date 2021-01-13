@@ -1,14 +1,11 @@
 const express = require('express')
-const app = express()
 const cors = require('cors')
+const app = express()
 
 app.use(cors())
-
 app.use(express.urlencoded({ extended: false }))
 
-app.use(express.json())
+const userRouter = require('./router/user')
+app.use('/api', userRouter)
 
-// 启动服务器
-app.listen(3007, () => {
-  console.log('api server running at http://127.0.0.1:3007')
-})
+app.listen(3007, () => console.log('api server running at http://127.0.0.1:3007'))

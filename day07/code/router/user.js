@@ -1,10 +1,9 @@
-const express = require('express')
-const router = express.Router()
-// 导入用户路由处理函数对应的模块
-const user_handler = require('../router_handler/user')
-// 注册新用户
-router.post('/reguser', user_handler.regUser)
-//登录
-router.post('/login', user_handler.login)
+const express = require('express');
+const router = express.Router();
 
-module.exports = router
+const userHandler = require('../router_handler/user');
+
+router.post('/reguser', userHandler.regUser);
+router.post('/login', userHandler.login);
+
+module.exports = router;
