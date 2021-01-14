@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://www.escook.cn:8088/#/mds/1.init -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>1. 初始化 - api_server_ev</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="./1. 初始化 - api_server_ev_files/vue.min.css">
+  <style>
+    body {
+      background-image: url('./images/water.png');
+    }
+
+    .markdown-section pre {
+      transition: all 0.3s;
+    }
+
+    .markdown-section pre:hover {
+      box-shadow: 1px 1px 10px #efefef;
+    }
+
+    /* 设置站长统计的位置 */
+    #cnzz_stat_icon_1279327420 {
+      position: absolute;
+      left: 40%;
+      bottom: 5px;
+    }
+  </style>
+<style type="text/css">.docsify-copy-code-button,.docsify-copy-code-button span{cursor:pointer;transition:all .25s ease}.docsify-copy-code-button{position:absolute;z-index:1;top:0;right:0;overflow:visible;padding:.65em .8em;border:0;border-radius:0;outline:0;font-size:1em;background:grey;background:var(--theme-color,grey);color:#fff;opacity:0}.docsify-copy-code-button span{border-radius:3px;background:inherit;pointer-events:none}.docsify-copy-code-button .error,.docsify-copy-code-button .success{position:absolute;z-index:-100;top:50%;right:0;padding:.5em .65em;font-size:.825em;opacity:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.docsify-copy-code-button.error .error,.docsify-copy-code-button.success .success{right:100%;opacity:1;-webkit-transform:translate(-115%,-50%);transform:translate(-115%,-50%)}.docsify-copy-code-button:focus,pre:hover .docsify-copy-code-button{opacity:1}</style><style type="text/css">.docsify-pagination-container{display:flex;flex-wrap:wrap;justify-content:space-between;overflow:hidden;margin:5em 0 1em;border-top:1px solid rgba(0,0,0,.07)}.pagination-item{margin-top:2.5em}.pagination-item a,.pagination-item a:hover{text-decoration:none}.pagination-item a{color:currentColor}.pagination-item a:hover .pagination-item-title{text-decoration:underline}.pagination-item:not(:last-child) a .pagination-item-label,.pagination-item:not(:last-child) a .pagination-item-subtitle,.pagination-item:not(:last-child) a .pagination-item-title{opacity:.3;transition:all .2s}.pagination-item:last-child .pagination-item-label,.pagination-item:not(:last-child) a:hover .pagination-item-label{opacity:.6}.pagination-item:not(:last-child) a:hover .pagination-item-title{opacity:1}.pagination-item-label{font-size:.8em}.pagination-item-label>*{line-height:1;vertical-align:middle}.pagination-item-label svg{height:.8em;width:auto;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:1px}.pagination-item--next{margin-left:auto;text-align:right}.pagination-item--next svg{margin-left:.5em}.pagination-item--previous svg{margin-right:.5em}.pagination-item-title{font-size:1.6em}.pagination-item-subtitle{text-transform:uppercase;opacity:.3}</style></head>
+
+<body data-page="mds/1.init.md" class="ready sticky">
+  <main><button class="sidebar-toggle" aria-label="Menu"><div class="sidebar-toggle-button"><span></span><span></span><span></span></div></button><aside class="sidebar"><h1 class="app-name"><a class="app-name-link" data-nosearch="" href="http://www.escook.cn:8088/">大事件项目 api_server</a></h1><div class="sidebar-nav"><!-- docs/_sidebar.md -->
+
+<ul><li><a href="http://www.escook.cn:8088/#/">Headline</a></li><li class="active"><a href="http://www.escook.cn:8088/#/mds/1.init">1. 初始化</a><ul class="app-sub-sidebar"><li><a class="section-link" href="http://www.escook.cn:8088/#/mds/1.init?id=_11-%e5%88%9b%e5%bb%ba%e9%a1%b9%e7%9b%ae">1.1 创建项目</a></li><li><a class="section-link" href="http://www.escook.cn:8088/#/mds/1.init?id=_12-%e9%85%8d%e7%bd%ae-cors-%e8%b7%a8%e5%9f%9f">1.2 配置 cors 跨域</a></li><li><a class="section-link" href="http://www.escook.cn:8088/#/mds/1.init?id=_13-%e9%85%8d%e7%bd%ae%e8%a7%a3%e6%9e%90%e8%a1%a8%e5%8d%95%e6%95%b0%e6%8d%ae%e7%9a%84%e4%b8%ad%e9%97%b4%e4%bb%b6">1.3 配置解析表单数据的中间件</a></li><li><a class="section-link" href="http://www.escook.cn:8088/#/mds/1.init?id=_14-%e5%88%9d%e5%a7%8b%e5%8c%96%e8%b7%af%e7%94%b1%e7%9b%b8%e5%85%b3%e7%9a%84%e6%96%87%e4%bb%b6%e5%a4%b9">1.4 初始化路由相关的文件夹</a></li><li><a class="section-link" href="http://www.escook.cn:8088/#/mds/1.init?id=_15-%e5%88%9d%e5%a7%8b%e5%8c%96%e7%94%a8%e6%88%b7%e8%b7%af%e7%94%b1%e6%a8%a1%e5%9d%97">1.5 初始化用户路由模块</a></li><li><a class="section-link" href="http://www.escook.cn:8088/#/mds/1.init?id=_16-%e6%8a%bd%e7%a6%bb%e7%94%a8%e6%88%b7%e8%b7%af%e7%94%b1%e6%a8%a1%e5%9d%97%e4%b8%ad%e7%9a%84%e5%a4%84%e7%90%86%e5%87%bd%e6%95%b0">1.6 抽离用户路由模块中的处理函数</a></li></ul></li><li><a href="http://www.escook.cn:8088/#/mds/2.login_reg">2. 登录注册</a></li><li><a href="http://www.escook.cn:8088/#/mds/3.userinfo">3. 个人中心</a></li><li><a href="http://www.escook.cn:8088/#/mds/4.article_cates">4. 文章分类管理</a></li><li><a href="http://www.escook.cn:8088/#/mds/5.article">5. 文章管理</a></li></ul></div></aside><section class="content"><article class="markdown-section" id="main"><h1 id="_1-初始化"><a href="http://www.escook.cn:8088/#/mds/1.init?id=_1-%e5%88%9d%e5%a7%8b%e5%8c%96" data-id="_1-初始化" class="anchor"><span>1. 初始化</span></a></h1><h3 id="_11-创建项目"><a href="http://www.escook.cn:8088/#/mds/1.init?id=_11-%e5%88%9b%e5%bb%ba%e9%a1%b9%e7%9b%ae" data-id="_11-创建项目" class="anchor"><span>1.1 创建项目</span></a></h3><ol><li>新建 <code>api_server</code> 文件夹作为项目根目录，并在项目根目录中运行如下的命令，初始化包管理配置文件：</li></ol><pre v-pre="" data-lang="bash"><code class="lang-bash"><span class="token function">npm</span> init -y</code><button class="docsify-copy-code-button"><span class="label">Copy to clipboard</span><span class="error">Error</span><span class="success">Copied</span></button></pre><ol start="2"><li>运行如下的命令，安装特定版本的 <code>express</code>：</li></ol><pre v-pre="" data-lang="bash"><code class="lang-bash"><span class="token function">npm</span> i express@4.17.1</code><button class="docsify-copy-code-button"><span class="label">Copy to clipboard</span><span class="error">Error</span><span class="success">Copied</span></button></pre><ol start="3"><li>在项目根目录中新建 <code>app.js</code> 作为整个项目的入口文件，并初始化如下的代码：</li></ol><pre v-pre="" data-lang="js"><code class="lang-js"><span class="token comment">// 导入 express 模块</span>
+<span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span>
+<span class="token comment">// 创建 express 的服务器实例</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// write your code here...</span>
+
+<span class="token comment">// 调用 app.listen 方法，指定端口号并启动web服务器</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3007</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'api server running at http://127.0.0.1:3007'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code><button class="docsify-copy-code-button"><span class="label">Copy to clipboard</span><span class="error">Error</span><span class="success">Copied</span></button></pre><h3 id="_12-配置-cors-跨域"><a href="http://www.escook.cn:8088/#/mds/1.init?id=_12-%e9%85%8d%e7%bd%ae-cors-%e8%b7%a8%e5%9f%9f" data-id="_12-配置-cors-跨域" class="anchor"><span>1.2 配置 cors 跨域</span></a></h3><ol><li>运行如下的命令，安装 <code>cors</code> 中间件：</li></ol><pre v-pre="" data-lang="bash"><code class="lang-bash"><span class="token function">npm</span> i cors@2.8.5</code><button class="docsify-copy-code-button"><span class="label">Copy to clipboard</span><span class="error">Error</span><span class="success">Copied</span></button></pre><ol start="2"><li>在 <code>app.js</code> 中导入并配置 <code>cors</code> 中间件：</li></ol><pre v-pre="" data-lang="js"><code class="lang-js"><span class="token comment">// 导入 cors 中间件</span>
+<span class="token keyword">const</span> cors <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'cors'</span><span class="token punctuation">)</span>
+<span class="token comment">// 将 cors 注册为全局中间件</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">cors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code><button class="docsify-copy-code-button"><span class="label">Copy to clipboard</span><span class="error">Error</span><span class="success">Copied</span></button></pre><h3 id="_13-配置解析表单数据的中间件"><a href="http://www.escook.cn:8088/#/mds/1.init?id=_13-%e9%85%8d%e7%bd%ae%e8%a7%a3%e6%9e%90%e8%a1%a8%e5%8d%95%e6%95%b0%e6%8d%ae%e7%9a%84%e4%b8%ad%e9%97%b4%e4%bb%b6" data-id="_13-配置解析表单数据的中间件" class="anchor"><span>1.3 配置解析表单数据的中间件</span></a></h3><ol><li>通过如下的代码，配置解析 <code>application/x-www-form-urlencoded</code> 格式的表单数据的中间件：</li></ol><pre v-pre="" data-lang="js"><code class="lang-js">app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token function">urlencoded</span><span class="token punctuation">(</span><span class="token punctuation">{</span> extended<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code><button class="docsify-copy-code-button"><span class="label">Copy to clipboard</span><span class="error">Error</span><span class="success">Copied</span></button></pre><h3 id="_14-初始化路由相关的文件夹"><a href="http://www.escook.cn:8088/#/mds/1.init?id=_14-%e5%88%9d%e5%a7%8b%e5%8c%96%e8%b7%af%e7%94%b1%e7%9b%b8%e5%85%b3%e7%9a%84%e6%96%87%e4%bb%b6%e5%a4%b9" data-id="_14-初始化路由相关的文件夹" class="anchor"><span>1.4 初始化路由相关的文件夹</span></a></h3><ol><li>在项目根目录中，新建 <code>router</code> 文件夹，用来存放所有的<code>路由</code>模块<blockquote>
+<p>路由模块中，只存放客户端的请求与处理函数之间的映射关系</p></blockquote>
+</li><li>在项目根目录中，新建 <code>router_handler</code> 文件夹，用来存放所有的 <code>路由处理函数模块</code><blockquote>
+<p>路由处理函数模块中，专门负责存放每个路由对应的处理函数</p></blockquote>
+</li></ol><h3 id="_15-初始化用户路由模块"><a href="http://www.escook.cn:8088/#/mds/1.init?id=_15-%e5%88%9d%e5%a7%8b%e5%8c%96%e7%94%a8%e6%88%b7%e8%b7%af%e7%94%b1%e6%a8%a1%e5%9d%97" data-id="_15-初始化用户路由模块" class="anchor"><span>1.5 初始化用户路由模块</span></a></h3><ol><li>在 <code>router</code> 文件夹中，新建 <code>user.js</code> 文件，作为用户的路由模块，并初始化代码如下：</li></ol><pre v-pre="" data-lang="js"><code class="lang-js"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span>
+<span class="token comment">// 创建路由对象</span>
+<span class="token keyword">const</span> router <span class="token operator">=</span> express<span class="token punctuation">.</span><span class="token function">Router</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 注册新用户</span>
+router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/reguser'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">'reguser OK'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 登录</span>
+router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">'login OK'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 将路由对象共享出去</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> router</code><button class="docsify-copy-code-button"><span class="label">Copy to clipboard</span><span class="error">Error</span><span class="success">Copied</span></button></pre><ol start="2"><li>在 <code>app.js</code> 中，导入并使用 <code>用户路由模块</code> ：</li></ol><pre v-pre="" data-lang="js"><code class="lang-js"><span class="token comment">// 导入并注册用户路由模块</span>
+<span class="token keyword">const</span> userRouter <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./router/user'</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">'/api'</span><span class="token punctuation">,</span> userRouter<span class="token punctuation">)</span></code><button class="docsify-copy-code-button"><span class="label">Copy to clipboard</span><span class="error">Error</span><span class="success">Copied</span></button></pre><h3 id="_16-抽离用户路由模块中的处理函数"><a href="http://www.escook.cn:8088/#/mds/1.init?id=_16-%e6%8a%bd%e7%a6%bb%e7%94%a8%e6%88%b7%e8%b7%af%e7%94%b1%e6%a8%a1%e5%9d%97%e4%b8%ad%e7%9a%84%e5%a4%84%e7%90%86%e5%87%bd%e6%95%b0" data-id="_16-抽离用户路由模块中的处理函数" class="anchor"><span>1.6 抽离用户路由模块中的处理函数</span></a></h3><blockquote>
+<p>目的：为了保证 <code>路由模块</code> 的纯粹性，所有的 <code>路由处理函数</code>，必须抽离到对应的 <code>路由处理函数模块</code> 中</p></blockquote>
+<ol><li>在 <code>/router_handler/user.js</code> 中，使用 <code>exports</code> 对象，分别向外共享如下两个 <code>路由处理函数</code> ：</li></ol><pre v-pre="" data-lang="js"><code class="lang-js"><span class="token comment">/**
+ * 在这里定义和用户相关的路由处理函数，供 /router/user.js 模块进行调用
+ */</span>
+
+<span class="token comment">// 注册用户的处理函数</span>
+exports<span class="token punctuation">.</span><span class="token function-variable function">regUser</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">'reguser OK'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 登录的处理函数</span>
+exports<span class="token punctuation">.</span><span class="token function-variable function">login</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">'login OK'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code><button class="docsify-copy-code-button"><span class="label">Copy to clipboard</span><span class="error">Error</span><span class="success">Copied</span></button></pre><ol start="2"><li>将 <code>/router/user.js</code> 中的代码修改为如下结构：</li></ol><pre v-pre="" data-lang="js"><code class="lang-js"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> router <span class="token operator">=</span> express<span class="token punctuation">.</span><span class="token function">Router</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 导入用户路由处理函数模块</span>
+<span class="token keyword">const</span> userHandler <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../router_handler/user'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 注册新用户</span>
+router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/reguser'</span><span class="token punctuation">,</span> userHandler<span class="token punctuation">.</span>regUser<span class="token punctuation">)</span>
+<span class="token comment">// 登录</span>
+router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">,</span> userHandler<span class="token punctuation">.</span>login<span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> router</code><button class="docsify-copy-code-button"><span class="label">Copy to clipboard</span><span class="error">Error</span><span class="success">Copied</span></button></pre><span id="cnzz_stat_icon_1279327420">
+  <a href="https://www.cnzz.com/stat/website.php?web_id=1279327420" target="_blank" title="彬哥の站长统计">
+    <img border="0" hspace="0" vspace="0" src="./1. 初始化 - api_server_ev_files/pic.gif">
+  </a>
+</span>
+<div class="docsify-pagination-container">
+        <div class="pagination-item pagination-item--previous">
+          <a href="http://www.escook.cn:8088/#/">
+            <div class="pagination-item-label">
+              <svg width="10" height="16" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg">
+                <polyline fill="none" vector-effect="non-scaling-stroke" points="8,2 2,8 8,14"></polyline>
+              </svg>
+              <span>PREVIOUS</span>
+            </div>
+            <div class="pagination-item-title">Headline</div>
+      </a>
+        </div>
+      
+        <div class="pagination-item pagination-item--next">
+          <a href="http://www.escook.cn:8088/#/mds/2.login_reg">
+            <div class="pagination-item-label">
+              <span>NEXT</span>
+              <svg width="10" height="16" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg">
+                <polyline fill="none" vector-effect="non-scaling-stroke" points="2,2 8,8 2,14"></polyline>
+              </svg>
+            </div>
+            <div class="pagination-item-title">2. 登录注册</div>
+      </a>
+        </div>
+      </div></article></section></main>
+  <script>
+    window.$docsify = {
+      name: '大事件项目 api_server',
+      maxLevel: 4,
+      subMaxLevel: 4,
+      auto2top: true,
+      loadSidebar: true,
+      autoHeader: true,
+      topMargin: 10
+    }
+  </script>
+  <!-- <script src="//unpkg.com/docsify/lib/docsify.min.js"></script> -->
+  <script src="./1. 初始化 - api_server_ev_files/docsify.min.js.下载"></script>
+  <script src="./1. 初始化 - api_server_ev_files/docsify-copy-code"></script>
+  <script src="./1. 初始化 - api_server_ev_files/prism-bash.min.js.下载"></script>
+  <script src="./1. 初始化 - api_server_ev_files/docsify-pagination.min.js.下载"></script>
+
+  <!-- 站长统计 -->
+  <script src="./1. 初始化 - api_server_ev_files/z_stat.php" type="text/javascript"></script><script src="./1. 初始化 - api_server_ev_files/core.php" charset="utf-8" type="text/javascript"></script><a href="https://www.cnzz.com/stat/website.php?web_id=1279327420" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="./1. 初始化 - api_server_ev_files/pic.gif"></a>
+  <script src="./1. 初始化 - api_server_ev_files/core.php" charset="utf-8" type="text/javascript"></script><a href="https://www.cnzz.com/stat/website.php?web_id=1279327420" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="./1. 初始化 - api_server_ev_files/pic.gif"></a>
+
+
+<div class="progress" style="opacity: 0; width: 0%;"></div></body></html>
