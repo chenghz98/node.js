@@ -90,4 +90,3 @@ exports.login = (req, res) => {
     })
   })
 }
-
